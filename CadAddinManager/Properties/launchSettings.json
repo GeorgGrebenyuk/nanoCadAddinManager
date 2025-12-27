@@ -1,20 +1,29 @@
 {
   "profiles": {
-    "Cad2022": {
+    "NC 21": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2022\\acad.exe"
+      "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 21.0\\nCad.exe",
+      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
     },
-    "Cad2023": {
+    "NC 22": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2023\\acad.exe"
+      "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 22.0\\nCad.exe",
+      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
     },
-    "Cad2024": {
+    "NC 23": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2024\\acad.exe"
+      "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 23.0\\nCad.exe",
+      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
     },
-    "Cad2025": {
+    "NC 24": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2025\\acad.exe"
+      "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 24.0\\nCad.exe",
+      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
+    },
+    "NC 25": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 25.0\\nCad.exe",
+      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
     }
   }
 }

@@ -8,28 +8,28 @@
     <PlatformTarget>x64</PlatformTarget>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWpf>true</UseWpf>
-    <Configurations>Debug A21;Debug A22;Debug A23;Debug A24;Debug A25</Configurations>
-    <Configurations>$(Configurations);Release A20;Release A21;Release A22;Release A23;Release A24;Release A25</Configurations>
+    <Configurations>Debug N21;Debug N22;Debug N23;Debug N24;Debug N25</Configurations>
+    <Configurations>$(Configurations);Release N20;Release N21;Release N22;Release N23;Release N24;Release N25</Configurations>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('A21'))">
+  <PropertyGroup Condition="$(Configuration.Contains('N21'))">
     <CADVersion>21.0.5699.3427</CADVersion>
     <DefineConstants>$(DefineConstants);A21</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('A22'))">
+  <PropertyGroup Condition="$(Configuration.Contains('N22'))">
     <CADVersion>22.0.6013.3747</CADVersion>
     <DefineConstants>$(DefineConstants);A22</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('A23'))">
+  <PropertyGroup Condition="$(Configuration.Contains('N23'))">
     <CADVersion>23.0.6177.4117</CADVersion>
     <TargetFramework>net6.0-windows</TargetFramework>
     <DefineConstants>$(DefineConstants);A23</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('A24'))">
+  <PropertyGroup Condition="$(Configuration.Contains('N24'))">
     <CADVersion>24.0.6377.4326</CADVersion>
     <TargetFramework>net6.0-windows</TargetFramework>
     <DefineConstants>$(DefineConstants);A24</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('A25'))">
+  <PropertyGroup Condition="$(Configuration.Contains('N25'))">
     <CADVersion>25.0.6785.4733</CADVersion>
     <TargetFramework>net6.0-windows</TargetFramework>
     <DefineConstants>$(DefineConstants);A25</DefineConstants>

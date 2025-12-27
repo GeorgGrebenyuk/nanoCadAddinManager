@@ -21,7 +21,7 @@ directly without closing & re-opening **nanoCAD** again and again. As an alterna
 
 Some feature include:
 - A newbie can create a new Add-in and explore **nanoCAD** easy with Add-in manager.
-- Add-in tester(use Debug and Trace to test your add-in).
+- Add-in tester(use Debug Nnd Trace to test your add-in).
 - **Debug / Trace** : Support Show result use [Debug](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-6.0) or [Trace](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.trace?view=net-6.0) to show result in nanoCAD.
 - Add-in manager
     - AddInManager Manual : Use for normal process load/unload addin
@@ -137,7 +137,7 @@ public class DebugTraceTest
 
 ## Installation
 
-Please follow last release at section [Release](https://github.com/GeorgGrebenyuk/nanoCadAddinManager/releases/latest)
+Please follow last Release Nt section [Release](https://github.com/GeorgGrebenyuk/nanoCadAddinManager/releases/latest)
 
 Support nanoCAD Version : 21, 22, 23, 24, 25
 

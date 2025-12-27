@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.EditorInput;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.Runtime;
+using HostMgd.ApplicationServices;
+using Teigha.DatabaseServices;
+using HostMgd.EditorInput;
+using Teigha.Geometry;
+using Teigha.Runtime;
 
 namespace Test;
 
@@ -23,7 +23,7 @@ public class TestViewPort
 
         try
         {
-            doc = Autodesk.AutoCAD.ApplicationServices.Core.Application.DocumentManager.MdiActiveDocument;
+            doc = HostMgd.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             db = doc.Database;
             ed = doc.Editor;
             LayoutManager layoutManager = LayoutManager.Current;

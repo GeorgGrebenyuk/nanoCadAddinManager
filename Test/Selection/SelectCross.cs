@@ -1,7 +1,7 @@
-﻿using Autodesk.AutoCAD.ApplicationServices.Core;
-using Autodesk.AutoCAD.EditorInput;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.Runtime;
+﻿using HostMgd.ApplicationServices;
+using HostMgd.EditorInput;
+using Teigha.Geometry;
+using Teigha.Runtime;
 
 namespace Test.Selection;
 

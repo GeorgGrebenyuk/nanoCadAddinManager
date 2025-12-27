@@ -1,36 +1,16 @@
 # Cad Add-in Manager
 
-![Autocad API](https://img.shields.io/badge/Autocad%20API%202025-blue.svg) ![Platform](https://img.shields.io/badge/platform-Windows-lightgray.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgray.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![ReSharper](https://img.shields.io/badge/ReSharper-2023.3.3-yellow) ![Rider](https://img.shields.io/badge/Rider-2023.1.2-yellow) ![Visual Studio 2022](https://img.shields.io/badge/Visual_Studio_2022_Preview_2.0-17.1.0-yellow) ![.NET Framework](https://img.shields.io/badge/.NET_8.0-yellow)
-
-[![Publish](../../actions/workflows/Workflow.yml/badge.svg)](../../actions)
-[![Github All Releases](https://img.shields.io/github/downloads/chuongmep/cadaddinmanager/total?color=blue&label=Download)]()
-[![HitCount](https://hits.dwyl.com/chuongmep/cadaddinmanager.svg?style=flat-square)](http://hits.dwyl.com/chuongmep/cadaddinmanager)
-<a href="https://twitter.com/intent/follow?screen_name=chuongmep">
-<img src="https://img.shields.io/twitter/follow/chuongmep?style=social&logo=twitter"
-alt="follow on Twitter"></a>
-
-![](pic/CadAddinManagerBackground.png)
-
-## 💖 Support This Project
-
-If you like this project and want to support its development, please consider making a donation. Your contributions will help us continue to improve and maintain the project.
-
-<p align="center">
-  <a href="https://donate.stripe.com/7sI8yo9xI03J4UwcMQ">
-    <img src="https://img.shields.io/badge/Donate-Stripe-blue?style=for-the-badge&logo=stripe" alt="Donate with Stripe" />
-  </a>
-</p>
+![Visual Studio 2022](https://img.shields.io/badge/Visual_Studio_2022_Preview_2.0-17.1.0-yellow) ![.NET Framework](https://img.shields.io/badge/.NET_6.0-yellow)
 
 ## Summary
 
 ![AddinManager](pic/Addin.png)
 
-Usually, when developing and debugging an addin with **Autocad** or **Civil3D** API, user has to close & re-open **Autocad** or **Civil3D** each time
+Usually, when developing and debugging an addin with **nanoCAD** API, user has to close & re-open **nanoCAD**  each time
 he/she modifies the addin code and wants to re-compile. But with **Add-In Manager**, user can modify and run the Addin.
-directly without closing & re-opening **Autocad** or **Civil3D** again and again.This is a next branch from [Revit Addin Manager](https://github.com/chuongmep/RevitAddInManager)
-to support multiple platform API for developer. With current technology, you can use [Hot Reload](https://docs.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022) to speed it up.But try this project it will be faster with any Addin.
+directly without closing & re-opening **nanoCAD** again and again. As an alternative, you can use [Hot Reload](https://docs.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022) to speed it. But try this project it will be faster with any Addin.
 
 - [x] [Revit Add-In Manager](https://github.com/chuongmep/RevitAddInManager)
 
@@ -40,9 +20,9 @@ to support multiple platform API for developer. With current technology, you can
 
 
 Some feature include:
-- A newbie can create a new Add-in and explore **AutoCAD or Civil3D API** easy with Add-in manager.
+- A newbie can create a new Add-in and explore **nanoCAD** easy with Add-in manager.
 - Add-in tester(use Debug and Trace to test your add-in).
-- **Debug / Trace** : Support Show result use [Debug](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-6.0) or [Trace](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.trace?view=net-6.0) to show result in Autocad or Civil3D.
+- **Debug / Trace** : Support Show result use [Debug](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-6.0) or [Trace](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.trace?view=net-6.0) to show result in nanoCAD.
 - Add-in manager
     - AddInManager Manual : Use for normal process load/unload addin
     - AddInManager Faceless : use for load last process before addin without UI
@@ -67,7 +47,7 @@ Some feature include:
 Execute a command easily  :
  1. Create a class library use .NET
 
- 2. Add library Autocad API or Civil3D API
+ 2. Add library nanoCAD .NET API
 
  3. Create a command, example:
 
@@ -88,7 +68,7 @@ Execute a command easily  :
 Execute a Lisp Function easily  :
 1. Create a class library use .NET
 
-2. Add library Autocad API or Civil3D API
+2. Add library nanoCAD API
 
 3. Create a Lisp Function, example:
 
@@ -103,7 +83,7 @@ Execute a Lisp Function easily  :
             int nCnt = 0;
             foreach (TypedValue rb in rbArgs)
             {
-                if (rb.TypeCode == (int) LispDataType.Text)
+                if (rb.TypeCode == (int) HostMgd.Runtime.LispDataType.Text)
                 {
                     switch (nCnt)
                     {
@@ -126,7 +106,7 @@ Execute a Lisp Function easily  :
 
 5.Use Reload when you change code or rebuild.
 
-6.Run Lisp Function [example](https://github.com/chuongmep/CadAddinManager/blob/9982d2a2b32591f508c0ce0e55e0d636ba38092c/Test/FunctionLispTest.cs#L9-L34) : `(displayfullname "First" "Last") `
+~6.Run Lisp Function [example](https://github.com/chuongmep/CadAddinManager/blob/9982d2a2b32591f508c0ce0e55e0d636ba38092c/Test/FunctionLispTest.cs#L9-L34) : `(displayfullname "First" "Last") `~
 
 ### Trace/Debug
 
@@ -138,7 +118,7 @@ Execute a Lisp Function easily  :
 A sample command to execute:
 ```csharp
 using System.Diagnostics;
-using Autodesk.AutoCAD.Runtime;
+using Teigha.Runtime;
 public class DebugTraceTest
 {
     [CommandMethod("DebugTraceTest")]
@@ -157,22 +137,27 @@ public class DebugTraceTest
 
 ## Installation
 
-Please follow last release at section [Release](https://github.com/chuongmep/CadAddInManager/releases/latest)
+Please follow last release at section [Release](https://github.com/GeorgGrebenyuk/nanoCadAddinManager/releases/latest)
 
-Support Autocad or Civil3D Version : 2020, 2021, 2022, 2023, 2024, 2025
----
-
-## Guideline
-
-You can visit to wiki and read document or access by this [link](https://github.com/chuongmep/CadAddInManager/wiki).
+Support nanoCAD Version : 21, 22, 23, 24, 25
 
 ---
 
-## Author
+## Authors and changing from ChuongHo's original version (CadAddinManager)
 
 Originally implemented by [ChuongHo](https://github.com/chuongmep) with platform **WPF** and add more feature to fit
 with the progressive development of modern technology. His focus is to work smarter and achieve the most effective
 practices to enhance data utilization and digital collaboration among AEC parties.
+
+Ported to nanoCAD by [GeorgGrebenyuk](https://github.com/GeorgGrebenyuk). There were next changings:
+
+- replacing Autodesk.AutoCAD's NuGet's packages to nanoCAD with other versions;
+- replacing namespaces from AutoCAD to nanoCAD;
+- project `CadAddinManager` was renamed to `nanoCadAddinManager`;
+- delete `App.cs` from `CadAddinManager`, because there are no analogue in nanoCAD as `AutoCAD.Windows`;
+- menu for nanoCAD was generated with the my [auxiliary library](https://github.com/GeorgGrebenyuk/ncad_UI_creator) and was integrated to project `CadAddinManager` as copying files to TargetDir;
+- script `posybuild.ps1` was deleted, because in nanoCAD there are no analogue `shared-folder` for apps;
+- editing this ReadMe to nanoCAD's specific;
 
 ---
 
@@ -183,43 +168,20 @@ the [License](License.md) file for full details.
 
 ---
 
-## Contribute
-
-**Add-In Manager** is an open-source project and would _be_ nothing without its community. You can make suggestions or
-track and submit bugs via Github [issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue). You can submit your own code to the **Add-In Manager** project via a
-Github [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-.
-
-Many Thanks all contributors for this repository. Feel free to contribute!
-Please refer to the [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-<a href = "https://github.com/chuongmep/CadAddInManager/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=chuongmep/CadAddInManager"/>
-</a>
-
----
-
-## Sponsors
-
-![](pic/jetbrains.png)
-
-Thanks for providing a free All product IDE for this project.
-
----
-
 ## Credits
+
+### From base CadAddinManager 
 
 - Credit to [Chuongmep](https://github.com/chuongmep)
 - Credit to [icons8.com](https://icons8.com) for the Cad Add-in Manager icons.
 - Credit to [Nice3point](https://github.com/Nice3point) for the CI/CD template.
 
-## Known Issues
+### New
 
-- [Ribbon not show when open startup Autocad or Civil3d](https://github.com/chuongmep/CadAddinManager/wiki/Fix-Problem-Ribbon-Not-Show).
+- Credit to [GeorgGrebenyuk](https://github.com/GeorgGrebenyuk) for porting to nanoCAD
 
-- Cad Add-in Manager current not support for some product custom of Autocad like **CadMEP** or **Advance steel**.
 
 ## Learning Resources
 
-- <a href="https://adndevblog.typepad.com/autocad/" target="_blank">ADN Dev Blog</a>
-- <a href="https://www.autodesk.com/developer-network/platform-technologies/autocad" target="_blank">AutoCAD Developer Center</a> 
+- <a href="https://developer.nanocad.ru/redmine/projects/ncadsdk/boards" target="_blank">nanoCAD Developer Club (RU)</a>
+- <a href="https://developer.nanocad.com/redmine/projects/ncadsdk/boards" target="_blank">nanoCAD Developer Club (RU)</a>

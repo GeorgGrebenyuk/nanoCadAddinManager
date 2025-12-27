@@ -11,29 +11,27 @@
     <Configurations>Debug A21;Debug A22;Debug A23;Debug A24;Debug A25</Configurations>
     <Configurations>$(Configurations);Release A20;Release A21;Release A22;Release A23;Release A24;Release A25</Configurations>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('A20'))">
-    <CADVersion>2020</CADVersion>
-    <DefineConstants>$(DefineConstants);A20</DefineConstants>
-  </PropertyGroup>
   <PropertyGroup Condition="$(Configuration.Contains('A21'))">
-    <CADVersion>2021</CADVersion>
+    <CADVersion>21.0.5699.3427</CADVersion>
     <DefineConstants>$(DefineConstants);A21</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="$(Configuration.Contains('A22'))">
-    <CADVersion>2022</CADVersion>
+    <CADVersion>22.0.6013.3747</CADVersion>
     <DefineConstants>$(DefineConstants);A22</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="$(Configuration.Contains('A23'))">
-    <CADVersion>2023</CADVersion>
+    <CADVersion>23.0.6177.4117</CADVersion>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <DefineConstants>$(DefineConstants);A23</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="$(Configuration.Contains('A24'))">
-    <CADVersion>2024</CADVersion>
+    <CADVersion>24.0.6377.4326</CADVersion>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <DefineConstants>$(DefineConstants);A24</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="$(Configuration.Contains('A25'))">
-    <CADVersion>2025</CADVersion>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <CADVersion>25.0.6785.4733</CADVersion>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <DefineConstants>$(DefineConstants);A25</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
@@ -44,10 +42,9 @@
     <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Chuongmep.Acad.Api.acmgd" Version="$(CADVersion).*" />
-    <PackageReference Include="Chuongmep.Acad.Api.acdbmgd" Version="$(CADVersion).*" />
-    <PackageReference Include="Chuongmep.Acad.Api.accoremgd" Version="$(CADVersion).*" />
-    <PackageReference Include="Chuongmep.Acad.Api.AdWindows" Version="$(CADVersion).*" />
+    <PackageReference Include="nanoCAD.Platform.NET" Version="$(CADVersion)">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
     <PackageReference Include="CsvHelper" Version="16.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 

@@ -4,12 +4,12 @@ using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Windows;
-using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.Runtime;
-using Application = Autodesk.AutoCAD.ApplicationServices.Core.Application;
-using CadApp = Autodesk.AutoCAD.ApplicationServices.Application;
+using HostMgd.ApplicationServices;
+using Teigha.DatabaseServices;
+using Teigha.Geometry;
+using Teigha.Runtime;
+using Application = HostMgd.ApplicationServices.Application;
+using CadApp = HostMgd.ApplicationServices.Application;
 namespace Test;
 
 public class ExtractFileFromResources
@@ -60,7 +60,7 @@ public class ExtractFileFromResources
         }
         finally
         {
-            Autodesk.AutoCAD.Internal.Utils.PostCommandPrompt();
+            HostMgd.Internal.Utils.PostCommandPrompt();
         }
     }
     public static string ExtractFileFromResource(string resourceName)
@@ -91,7 +91,7 @@ public class ExtractFileFromResources
         ObjectId retId;
 
         Document AcDocument =
-            Autodesk.AutoCAD.ApplicationServices.Core.Application.DocumentManager.MdiActiveDocument;
+            HostMgd.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
         Database AcDatabase = AcDocument.Database;
 
         using (AcDocument.LockDocument())

@@ -1,9 +1,9 @@
 ﻿using System;
-using Autodesk.AutoCAD.ApplicationServices.Core;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.PlottingServices;
-using Autodesk.AutoCAD.Runtime;
+using HostMgd.ApplicationServices;
+using Teigha.DatabaseServices;
+using Teigha.Geometry;
+using HostMgd.PlottingServices;
+using Teigha.Runtime;
 
 namespace Test;
 
@@ -22,7 +22,7 @@ public class TestCircle
             if (bt != null)
             {
                 var ms = tr.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
-                var circle = new Autodesk.AutoCAD.DatabaseServices.Circle();
+                var circle = new Teigha.DatabaseServices.Circle();
                 Random ran = new Random();
                 int c = ran.Next(0, 100);
                 circle.Center = new Point3d(0, 10, 0);

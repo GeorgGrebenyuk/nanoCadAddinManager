@@ -2,12 +2,12 @@
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.EditorInput;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.Runtime;
-using Application = Autodesk.AutoCAD.ApplicationServices.Application;
+using HostMgd.ApplicationServices;
+using Teigha.DatabaseServices;
+using HostMgd.EditorInput;
+using Teigha.Geometry;
+using Teigha.Runtime;
+using Application = HostMgd.ApplicationServices.Application;
 
 namespace Test;
 

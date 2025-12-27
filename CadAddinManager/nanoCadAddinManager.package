@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ApplicationPackage
+  xmlns="hostApplicationPackage/v01"
+  Name="nanoCadAddinManager"
+ >
+  <Components>
+    <ConfigEntry
+      FileName="nanoCadAddinManagerUi.cfg"
+      FileType="CFG"
+    />
+    <ComponentEntry
+        AppName="nanoCadAddinManager"
+        ModuleName="nanoCadAddinManager.dll"
+        ModuleType="MGD"
+    />
+  </Components>
+</ApplicationPackage>

@@ -1,12 +1,12 @@
 ﻿using System.IO;
 using System.Reflection;
 using System.Windows;
-using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.Runtime;
+using HostMgd.ApplicationServices;
+using Teigha.Runtime;
 using CadAddinManager.Model;
 using CadAddinManager.View;
 using CadAddinManager.ViewModel;
-using Application = Autodesk.AutoCAD.ApplicationServices.Core.Application;
+using Application = HostMgd.ApplicationServices.Application;
 using Exception = System.Exception;
 using MessageBox = System.Windows.MessageBox;
 

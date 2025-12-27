@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Runtime;
-using Application = Autodesk.AutoCAD.ApplicationServices.Core.Application;
+using Teigha.DatabaseServices;
+using Teigha.Runtime;
+using Application = HostMgd.ApplicationServices.Application;
 public class FunctionLispTest
 {
     //Test : (displayfullname "First" "Last")
@@ -15,7 +15,7 @@ public class FunctionLispTest
             int nCnt = 0;
             foreach (TypedValue rb in rbArgs)
             {
-                if (rb.TypeCode == (int) LispDataType.Text)
+                if (rb.TypeCode == (int)HostMgd.Runtime.LispDataType.Text)
                 {
                     switch (nCnt)
                     {

@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Windows.Forms.Integration;
-using Autodesk.AutoCAD.Runtime;
-using Autodesk.AutoCAD.Windows;
+using Teigha.Runtime;
+using HostMgd.Windows;
 using CadAddinManager.View.Control;
 
 namespace CadAddinManager.Command;

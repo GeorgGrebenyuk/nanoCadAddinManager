@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
-using Autodesk.AutoCAD.ApplicationServices.Core;
-using Autodesk.AutoCAD.Runtime;
+using HostMgd.ApplicationServices;
+using Teigha.Runtime;
 using CadAddinManager.Model;
 using Exception = System.Exception;
 
@@ -23,7 +23,7 @@ public class AddInManagerManual : ICadCommand
 
 public class AddInManagerFaceLess  : ICadCommand
 {
-    [Autodesk.AutoCAD.Runtime.CommandMethod("AddInManagerFaceLess",CommandFlags.Session)]
+    [Teigha.Runtime.CommandMethod("AddInManagerFaceLess",CommandFlags.Session)]
     public override void Execute()
     {
         try

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows;
-using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.Colors;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.EditorInput;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.Runtime;
+using HostMgd.ApplicationServices;
+using Teigha.Colors;
+using Teigha.DatabaseServices;
+using HostMgd.EditorInput;
+using Teigha.Geometry;
+using Teigha.Runtime;
 using CsvHelper;
-using Application = Autodesk.AutoCAD.ApplicationServices.Application;
+using Application = HostMgd.ApplicationServices.Application;
 using Exception = System.Exception;
 using Trace = System.Diagnostics.Trace;
 
@@ -119,7 +119,7 @@ public class ExtractLocation
     /// <param name="datas">list data </param>
     public void GetInfoRecord(BlockReference blockReference, ref List<AssignmentData> datas)
     {
-        Document doc = Autodesk.AutoCAD.ApplicationServices.Core.Application.DocumentManager.MdiActiveDocument;
+        Document doc = HostMgd.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
         Editor editor = doc.Editor;
         Database database = doc.Database;
         Matrix3d wcs = doc.Editor.CurrentUserCoordinateSystem.Inverse();
@@ -245,7 +245,7 @@ public class ExtractLocation
         double lineWidth)
     {
         // Get the current document and database
-        Document doc = Autodesk.AutoCAD.ApplicationServices.Core.Application.DocumentManager.MdiActiveDocument;
+        Document doc = HostMgd.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
         Database db = doc.Database;
 
         // Start a transaction

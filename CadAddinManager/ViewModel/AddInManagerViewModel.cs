@@ -9,7 +9,7 @@ using CadAddinManager.Model;
 using CadAddinManager.View;
 using CadAddinManager.View.Control;
 using Microsoft.Win32;
-using Application = Autodesk.AutoCAD.ApplicationServices.Core.Application;
+using Application = HostMgd.ApplicationServices.Application;
 using MessageBox = System.Windows.MessageBox;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 

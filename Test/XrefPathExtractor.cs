@@ -1,8 +1,8 @@
-﻿using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Runtime;
-using Autodesk.AutoCAD.EditorInput;
-using Application = Autodesk.AutoCAD.ApplicationServices.Core.Application;
+﻿using HostMgd.ApplicationServices;
+using Teigha.DatabaseServices;
+using Teigha.Runtime;
+using HostMgd.EditorInput;
+using Application = HostMgd.ApplicationServices.Application;
 
 namespace Test;
 

@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Autodesk.AutoCAD.Runtime;
+using Teigha.Runtime;
 
 
 public class DebugTraceTest

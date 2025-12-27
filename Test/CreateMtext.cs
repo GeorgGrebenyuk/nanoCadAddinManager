@@ -1,14 +1,14 @@
-﻿using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.Runtime;
+﻿using HostMgd.ApplicationServices;
+using Teigha.DatabaseServices;
+using Teigha.Geometry;
+using Teigha.Runtime;
 
 public class CreateMtext
 {
     [CommandMethod("TESTMTEXT")]
     public static void TestMtextCreate()
     {
-        Document doc = Autodesk.AutoCAD.ApplicationServices.Core.Application.DocumentManager.MdiActiveDocument;
+        Document doc = HostMgd.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
         if (doc == null)
             return;
         try

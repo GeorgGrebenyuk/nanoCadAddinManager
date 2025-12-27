@@ -1,0 +1,4 @@
+Имя команды	Внутреннее имя	Описание	Подпункт	Размер в ленте	RibbonSplitButton
+Addin Manager Manual	AddInManagerManual	Start Write Addin Manager Manual	Addin Manager	LargeWithText	
+Addin Manager Faceless	AddInManagerFaceLess	Addin Manager Faceless	Addin Manager	LargeWithText	
+Show/Hide Dock Debug/Trace	AddinManagerDockPanel	Show/Hide Dock Debug/Trace	Addin Manager	LargeWithText	

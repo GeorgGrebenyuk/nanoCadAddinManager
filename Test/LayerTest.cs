@@ -1,8 +1,8 @@
 ﻿using System;
-using Autodesk.AutoCAD.ApplicationServices.Core;
-using Autodesk.AutoCAD.Colors;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Runtime;
+using HostMgd.ApplicationServices;
+using Teigha.Colors;
+using Teigha.DatabaseServices;
+using Teigha.Runtime;
 
 namespace Test;
 

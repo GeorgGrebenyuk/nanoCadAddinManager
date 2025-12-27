@@ -1,0 +1,9 @@
+# Исключения для генерируемых файлов
+
+AddInManagerManual.ico
+AddinManagerDockPanel.ico
+AddInManagerFaceLess.ico
+
+# Генерируемые файлы
+nanoCadAddinManagerUi.cfg
+nanoCadAddinManagerUi

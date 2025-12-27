@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Reflection;
-using Autodesk.AutoCAD.Runtime;
+using Teigha.Runtime;
 using Exception = System.Exception;
 
 namespace CadAddinManager.Model;

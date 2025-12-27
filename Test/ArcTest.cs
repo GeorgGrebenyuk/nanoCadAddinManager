@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.Runtime;
-using Application = Autodesk.AutoCAD.ApplicationServices.Core.Application;
+using Teigha.DatabaseServices;
+using Teigha.Geometry;
+using Teigha.Runtime;
+using Application = HostMgd.ApplicationServices.Application;
 
 namespace Test;
 

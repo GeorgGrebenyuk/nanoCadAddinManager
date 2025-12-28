@@ -4,11 +4,9 @@
 
 ## Summary
 
-Current project is a fork of `CadAddinManager` (https://github.com/chuongmep/CadAddinManager )
+Current project is a fork of `CadAddinManager` (https://github.com/chuongmep/CadAddinManager ) for nanoCAD
 
-Russian's text read at [ReadMe_RU.md](./Readme_RU.md).
-
-
+Russian's text read at [Readme_RU.md](./Readme_RU.md).
 
 ![AddinManager](pic/Addin.png)
 

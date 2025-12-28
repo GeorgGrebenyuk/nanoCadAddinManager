@@ -483,12 +483,17 @@ public class AddInManagerViewModel : ViewModelBase
             "Temp", DefaultSetting.TempFolderName);
         if (Directory.Exists(tempFolder))
         {
-            try
-            {
-                Process.Start(tempFolder);
-            }
-            catch (Exception ex) { }
-            
+            // nanoCAD crashes with fatal error
+            Application.DocumentManager.MdiActiveDocument.Editor.WriteMessage($"This function will crash the nanoCAD! Delete folder \"{tempFolder}\" manualy");
+            // TODO: resolve it ...
+            //Process.Start(tempFolder);
+
+            //try
+            //{
+            //    Process.Start(tempFolder);
+            //}
+            //catch (Exception ex) { }
+
         }
     }
 

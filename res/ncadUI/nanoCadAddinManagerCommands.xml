@@ -6,7 +6,7 @@
   <IconsRefPath_or_DLL>Resources</IconsRefPath_or_DLL>
   <IconResVariant>LocalFile</IconResVariant>
   <IconFormatVariant>ICO</IconFormatVariant>
-  <RibbonName>Nervana</RibbonName>
+  <RibbonName>nanoCadAddinManager</RibbonName>
   <CSV_FilePath>nanoCadAddinManagerCommands.txt</CSV_FilePath>
   <CSV_Separator>9</CSV_Separator>
   <CSV_SkipHeader>true</CSV_SkipHeader>

@@ -483,7 +483,12 @@ public class AddInManagerViewModel : ViewModelBase
             "Temp", DefaultSetting.TempFolderName);
         if (Directory.Exists(tempFolder))
         {
-            Process.Start(tempFolder);
+            try
+            {
+                Process.Start(tempFolder);
+            }
+            catch (Exception ex) { }
+            
         }
     }
 

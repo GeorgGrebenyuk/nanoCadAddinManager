@@ -3,27 +3,27 @@
     "NC 21": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 21.0\\nCad.exe",
-      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
+      "commandLineArgs": "-g \"$(TargetDir)nanoCadAddinManager.package\""
     },
     "NC 22": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 22.0\\nCad.exe",
-      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
+      "commandLineArgs": "-g \"$(TargetDir)nanoCadAddinManager.package\""
     },
     "NC 23": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 23.0\\nCad.exe",
-      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
+      "commandLineArgs": "-g \"$(TargetDir)nanoCadAddinManager.package\""
     },
     "NC 24": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 24.0\\nCad.exe",
-      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
+      "commandLineArgs": "-g \"$(TargetDir)nanoCadAddinManager.package\""
     },
     "NC 25": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Nanosoft\\nanoCAD x64 25.0\\nCad.exe",
-      "commandLineArgs": "-g $(TargetDir)nanoCadAddinManager.package"
+      "commandLineArgs": "-g \"$(TargetDir)nanoCadAddinManager.package\""
     }
   }
 }

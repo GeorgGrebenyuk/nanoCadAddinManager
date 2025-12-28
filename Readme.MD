@@ -181,6 +181,9 @@ Ported to nanoCAD by [GeorgGrebenyuk](https://github.com/GeorgGrebenyuk). There 
 - menu for nanoCAD was generated with the my [auxiliary library](https://github.com/GeorgGrebenyuk/ncad_UI_creator) and was integrated to project `CadAddinManager` as copying files to TargetDir;
 - script `posybuild.ps1` was deleted, because in nanoCAD there are no analogue `shared-folder` for apps;
 - editing this ReadMe to nanoCAD's specific;
+- adding a CustomAttribute.IsResolved checking to `AssemLoader.ResolveDuplicateMethod`, because for some unloaded assemblies (for nanoCAD) it will getting to error;
+- creation a safe-version of method `AddInManagerViewModel.ClearCommandClick()`. Original version's will create a Fatal error in nanoCAD;
+- redefinition of procedure `AddInManagerViewModel.LoadCommandClick` to prevent Fatal error, if some method from library_1 will call some method2 from library_2. You will lost possibility to update second libraries via that's CadAddinManager until reloading nanoCAD;
 
 ---
 
@@ -223,6 +226,4 @@ you need copy needing reference versions of nanoCAD's .API libraries to TargetDi
 ## TODO
 
 - Edit the projects `Installer`, `Build` to nanoCAD's specific (now building only with script `nanoCadAddinManager_Build.bat`);
-- Fix fatal error on `ClearCommandClick()`;
-- Fix `AssemLoader` methods to load linked assemblies to target temp directory;
-- Fix `AssemLoader` methods to load nanoCAD's system libraries (to prevent copy it to TargetDir);
+- Add support two and more loaded assemblies in CAD (?);

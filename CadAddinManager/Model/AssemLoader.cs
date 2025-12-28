@@ -30,36 +30,6 @@ public class AssemLoader
         tempFolder = string.Empty;
         refedFolders = new List<string>();
         copiedFiles = new Dictionary<string, DateTime>();
-
-        // Попытка обойти ошибку с поиском типов ncad-библиотек
-        //string[] cachedIngoredLibraries = new string[] { "hostmgd.dll", "hostdbmgd.dll", "imapimgd.dll", "mapibasetypes.dll", "mapimgd.dll", "hostPointCloudsMgd.dll", "ncBIMSmgd.dll" };
-        //var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-
-        //List<TypeDefinition> ncadTypesRaw = new List<TypeDefinition>();
-        //foreach (var ass in assemblies)
-        //{
-        //    bool can_add = false;
-        //    try
-        //    {
-        //        string ass_location = ass.Location;
-        //        string ass_name = Path.GetFileName(ass_location);
-        //        can_add = cachedIngoredLibraries.Contains(Path.GetFileName(ass_name));
-        //    }
-        //    catch
-        //    {
-
-        //    }
-        //    if (can_add)
-        //    {
-        //        string assPath = ass.Location ?? "";
-        //        if (!File.Exists(assPath))  continue;
-        //        AssemblyDefinition assCecil = GetAssemblyDef(assPath);
-
-        //        ncadTypesRaw = ncadTypesRaw.Concat(assCecil.Modules.SelectMany(t => t.Types)).ToList();
-
-        //    }
-        //}
-        //ncadTypes = ncadTypesRaw.ToArray();
     }
 
     public void CopyGeneratedFilesBack()
@@ -139,7 +109,10 @@ public class AssemLoader
                         {
                             if (customAttribute.Constructor.DeclaringType.Name == "CommandMethodAttribute")
                             {
-                                int count = customAttribute.ConstructorArguments.Count;
+                                // The exception for non loaded DLLs (f.e. nanoCAD's specific)
+                                if (!customAttribute.IsResolved) continue;
+                                int count = customAttribute.ConstructorArguments.Count; ;
+
                                 CustomAttribute newAttr = null;
                                 if (count == 4)
                                 {
@@ -147,7 +120,7 @@ public class AssemLoader
                                 }
                                 if (count == 3)
                                 {
-                                   newAttr = CreateCustomAttribute3Type(customAttribute);
+                                    newAttr = CreateCustomAttribute3Type(customAttribute);
                                 }
                                 else if (count == 2)
                                 {

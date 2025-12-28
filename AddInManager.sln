@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{A8C6
 		CHANGELOG.md = CHANGELOG.md
 		nanoCadAddinManager_Build.bat = nanoCadAddinManager_Build.bat
 		Readme.MD = Readme.MD
+		Readme_RU.md = Readme_RU.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{1661572C-EF3A-4DD6-83BD-CB4239CE8CDD}"

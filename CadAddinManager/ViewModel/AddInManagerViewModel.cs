@@ -322,13 +322,19 @@ public class AddInManagerViewModel : ViewModelBase
     {
         OpenFileDialog openFileDialog = new OpenFileDialog();
         openFileDialog.Filter = @"assembly files (*.dll)|*.dll|All files (*.*)|*.*";
+        openFileDialog.Multiselect = true;
         if (openFileDialog.ShowDialog() != true)
         {
             return;
         }
-        var fileName = openFileDialog.FileName;
-        if (!File.Exists(fileName)) return;
-        LoadAssemblyCommand(fileName);
+        // For prevent fatal error, if one library call some from other library
+
+        foreach (string selectedFileName in openFileDialog.FileNames)
+        {
+            if (!File.Exists(selectedFileName)) continue;
+            LoadAssemblyCommand(selectedFileName);
+        }
+        
     }
 
     private void ReloadCommandClick()
@@ -483,17 +489,24 @@ public class AddInManagerViewModel : ViewModelBase
             "Temp", DefaultSetting.TempFolderName);
         if (Directory.Exists(tempFolder))
         {
-            // nanoCAD crashes with fatal error
-            Application.DocumentManager.MdiActiveDocument.Editor.WriteMessage($"This function will crash the nanoCAD! Delete folder \"{tempFolder}\" manualy");
-            // TODO: resolve it ...
-            //Process.Start(tempFolder);
-
-            //try
-            //{
-            //    Process.Start(tempFolder);
-            //}
-            //catch (Exception ex) { }
-
+            // Create a safe method inspite in clasic CadAddinManager
+            ProcessStartInfo processStartInfo = new ProcessStartInfo()
+            {
+                FileName = "explorer.exe",
+                Arguments = $"\"{tempFolder}\"",
+                UseShellExecute = true, // Use shell execute for opening with default application
+                CreateNoWindow = true,
+                ErrorDialog = false
+            };
+            try
+            {
+                using var process = new Process { StartInfo = processStartInfo };
+                process.Start();
+            }
+            catch (Exception ex)
+            {
+                Application.DocumentManager.MdiActiveDocument.Editor.WriteMessage(ex.Message);
+            }
         }
     }
 

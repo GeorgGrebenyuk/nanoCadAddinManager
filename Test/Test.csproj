@@ -10,6 +10,7 @@
     <UseWpf>true</UseWpf>
     <Configurations>Debug N21;Debug N22;Debug N23;Debug N24;Debug N25</Configurations>
     <Configurations>$(Configurations);Release N20;Release N21;Release N22;Release N23;Release N24;Release N25</Configurations>
+    <OutputPath>$(SolutionDir)bin\$(Configuration)</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="$(Configuration.Contains('N21'))">
     <CADVersion>21.0.5699.3427</CADVersion>
@@ -36,7 +37,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <Version>$(CADVersion)</Version>
-    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Description>A Project Support for developer in Autocad And Civil3D </Description>
     <PublishSingleFile>true</PublishSingleFile>

@@ -9,6 +9,7 @@
     <Configurations>Debug N21;Debug N22;Debug N23;Debug N24;Debug N25</Configurations>
     <Configurations>$(Configurations);Release N21;Release N22;Release N23;Release N24;Release N25</Configurations>
     <RootNamespace>CadAddinManager</RootNamespace>
+    <OutputPath>$(SolutionDir)bin\$(Configuration)</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
     <DebugSymbols>true</DebugSymbols>
@@ -145,25 +146,4 @@
     </PackageReference>
     <PackageReference Include="Mono.Cecil" Version="0.11.4" />
   </ItemGroup>
-  <PropertyGroup>
-    <StartAction>Program</StartAction>
-    <StartProgram>C:\Program Files\Autodesk\AutoCAD $(CADVersion)\acad.exe</StartProgram>
-    <StartArguments>/language ENG</StartArguments>
-  </PropertyGroup>
-<!--  <PropertyGroup>-->
-<!--    <PostBuildEvent>powershell -NoProfile -ExecutionPolicy Unrestricted $(SolutionDir)CadAddinManager\postbuild.ps1 -Configuration '$(Configuration)' -SolutionDir '$(SolutionDir)' -ProjectDir '$(ProjectDir)'</PostBuildEvent>-->
-<!--  </PropertyGroup>-->
-  <Target Name="CopyFiles" AfterTargets="CoreBuild" Condition="$(Configuration.Contains('Debug'))">
-    <ItemGroup>
-      <XmlItem Include="$(ProjectDir)*.xml" />
-      <AddinItem Include="$(TargetDir)*.*" />
-    </ItemGroup>
-    <PropertyGroup>
-      <RootDir>C:\ProgramData\Autodesk\ApplicationPlugins\$(AssemblyName).bundle\</RootDir>
-    </PropertyGroup>
-        <Message Text="Copy files to Addin folder" Importance="high" />
-    <Copy SourceFiles="@(XmlItem)" DestinationFolder="$(RootDir)" />
-    <Copy SourceFiles="@(AddinItem)" DestinationFolder="$(RootDir)$(CADTrimVersion)\%(RecursiveDir)" />
-    
-  </Target>
 </Project>

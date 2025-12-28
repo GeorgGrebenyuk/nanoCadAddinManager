@@ -186,7 +186,7 @@ public class AddInManagerViewModel : ViewModelBase
 
     private void HelpCommandClick()
     {
-        Process.Start("https://github.com/chuongmep/CadAddInManager/wiki");
+        //Process.Start("https://github.com/chuongmep/CadAddInManager/wiki");
     }
 
     public AddInManagerViewModel()

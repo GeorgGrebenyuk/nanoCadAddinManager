@@ -44,4 +44,16 @@ TODO: не требовать nanoCAD-библиотеки
 
 2. Отлаживаемые библиотеки грузятся в неё через интерфейс CadAddinManager. и выгружаются также через него;
 
-3. Точки останова работать **не будут**! Для вывода отладочных сообщений используйте встроенный в CadAddinManager стек вызовов -- команду `System.Diagnostics.Debug.WriteLine("...text")`, её результат будет представлен в окне `AddinManagerDockPanel` и вкладке `Listener` у `AddInManagerManual`;
+3. Точки останова работать **не будут**! 
+
+Для вывода отладочных сообщений используйте встроенный в CadAddinManager стек вызовов -- команды `System.Diagnostics.Trace.WriteLine()` или `System.Diagnostics.Debug.WriteLine()`.
+
+Если с `Debug.WriteLine()` будет выводиться только простой ч\б текст, то с `Trace.WriteLine()` может выводить цветной текст, если использовать соответствующий префикс в аргументе сообщения:
+
+```cs
+Trace.WriteLine($"Warning: This will be a red color");
+Trace.WriteLine($"Error: This will bea red color");
+Trace.WriteLine($"Add: This will bea blue color");
+Trace.WriteLine($"Modify: This will bea cyan color");
+Trace.WriteLine($"Delete: This will bea gray color");
+```

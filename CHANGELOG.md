@@ -1,52 +1,5 @@
 # Changelog
-- 2025-06-12 **2.0.6**
-  - Allow Debug with .pdb [#18](https://github.com/chuongmep/CadAddinManager/pull/18)
-- 2025-05-18 **2.0.5**
-  - Fixed command attribute flag with 4 type arguments
-- 2025-03-05 **2.0.4**
-  - Fix issue assembly code loaded raised e duplicate message in AutoCAD 2025
-- 2025-03-04 **2.0.3**
-  - Fix issue can't load dependencies into AutoCAD 2025
-  - Allow use load assembly context and unload assembly A25
-- 2023-04-28 **2.0.2**
-  - Add support Autocad 2025
-  - Add support Civil3D 2025
-- 2023-05-24 **2.0.0**
-  - Fixed conflict load assembly version 2022.
-  - Separate load assembly for each version.
-- 2023-05-24 **2.0.0**
-  - Add support Version 2024
-  - Improvement user interface
-- 2023-03-29 **1.0.9**
-  - Fixed issue load add-in out range exception parameter name [#2](https://github.com/chuongmep/CadAddinManager/issues/2)
-  - Fixed issue load add-in use CAD MEP [#6](https://github.com/chuongmep/CadAddinManager/issues/6).
-  - Fixed issue load Ribbon load with civil3d 2023.
-- 2022-12-21 **1.0.8**
-  - Fix issue load relative path with window parallel macOS.
-- 2022-06-02 **1.0.7**
-  - Support event ArrowKeyDown and ArrowKeyUp to move between items search and TreeView
-  - Support press key Esc from keyboard to close Form.
-- 2022-05-29 **1.0.6**
-  - Add tab lisp function and support reload update lisp function 
-- 2022-05-22 **1.0.5**
-  - Fix name string define attribute larger 64 character show eInvalidInput.
-  - Add some example learning curve.
-- 2022-05-20 **1.0.4**
-  - fix bug eDuplicateKey below commandline when load or execute assembly [#1](https://github.com/chuongmep/CadAddinManager/issues/1).
-- 2022-05-16 **1.0.3**
-  - Support Copy Content Debug/Trace Output to Clipboard.
-- 2022-05-13 **1.0.2**
-  - Add tab support show result trace/debug
-  - Add DockPanel Support Show/Hide Debug/Trace result.
-  - Support use Trace.Write() output in CadAddinManager and DockPanel **Debug/Trace Output**
-  - Support use Trace.WriteLine() output in CadAddinManager and DockPanel **Debug/Trace Output**
-  - Support use Debug.WriteLine() output in CadAddinManager and DockPanel **Debug/Trace Output**
-  - Support use Debug.WriteLine() output in CadAddinManager and DockPanel **Debug/Trace Output**
-  - Support show difference color type : Add,Modify,Warning,Error,Delete.
-- 2022-04-28 **1.0.1**
-  - Fix small bug when execute command string reflect.
-  - Add some test cases.
-- 2022-04-27 **1.0.0**
-  - First Release.
-  - Support CAD & Civil3D Version : 2020,2021,2022,2023
 
+28-12-2025
+
+Publish as-is

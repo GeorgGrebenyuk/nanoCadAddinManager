@@ -223,3 +223,6 @@ you need copy needing reference versions of nanoCAD's .API libraries to TargetDi
 ## TODO
 
 - Edit the projects `Installer`, `Build` to nanoCAD's specific (now building only with script `nanoCadAddinManager_Build.bat`);
+- Fix fatal error on `ClearCommandClick()`;
+- Fix `AssemLoader` methods to load linked assemblies to target temp directory;
+- Fix `AssemLoader` methods to load nanoCAD's system libraries (to prevent copy it to TargetDir);

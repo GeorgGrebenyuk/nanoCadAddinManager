@@ -16,11 +16,11 @@ public class DockPanelCommand : ICadCommand
         {
             pLogControl = new PaletteSet("Trace/Debug Output");
             pLogControl.MinimumSize = new System.Drawing.Size(300, 300);
-            pLogControl.DockEnabled = (DockSides)((int)DockSides.Left + (int)DockSides.Right);
-            pLogControl.Style = PaletteSetStyles.ShowAutoHideButton
-                                |  PaletteSetStyles.ShowCloseButton
-                                |  PaletteSetStyles.ShowPropertiesMenu
-                                |  PaletteSetStyles.Snappable;
+            //pLogControl.DockEnabled = (DockSides)((int)DockSides.Left + (int)DockSides.Right);
+            //pLogControl.Style = PaletteSetStyles.ShowAutoHideButton
+            //                    |  PaletteSetStyles.ShowCloseButton
+            //                    |  PaletteSetStyles.ShowPropertiesMenu
+            //                    |  PaletteSetStyles.Snappable;
             LogControl Lib = new LogControl();
             ElementHost host = new ElementHost();
             host.AutoSize = true;

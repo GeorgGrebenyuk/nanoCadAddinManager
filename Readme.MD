@@ -1,10 +1,14 @@
-# Cad Add-in Manager
+# nanoCAD Add-in Manager
 
-![Platform](https://img.shields.io/badge/platform-Windows-lightgray.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-![Visual Studio 2022](https://img.shields.io/badge/Visual_Studio_2022_Preview_2.0-17.1.0-yellow) ![.NET Framework](https://img.shields.io/badge/.NET_6.0-yellow)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgray.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 ## Summary
+
+Current project is a fork of `CadAddinManager` (https://github.com/chuongmep/CadAddinManager )
+
+Russian's text read at [ReadMe_RU.md](./Readme_RU.md).
+
+
 
 ![AddinManager](pic/Addin.png)
 
@@ -18,24 +22,38 @@ directly without closing & re-opening **nanoCAD** again and again. As an alterna
 
 - [x] [Cad Add-In Manager](https://github.com/chuongmep/CadAddInManager)
 
-
 Some feature include:
+
 - A newbie can create a new Add-in and explore **nanoCAD** easy with Add-in manager.
+
 - Add-in tester(use Debug Nnd Trace to test your add-in).
+
 - **Debug / Trace** : Support Show result use [Debug](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-6.0) or [Trace](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.trace?view=net-6.0) to show result in nanoCAD.
+
 - Add-in manager
-    - AddInManager Manual : Use for normal process load/unload addin
-    - AddInManager Faceless : use for load last process before addin without UI
+  
+  - AddInManager Manual : Use for normal process load/unload addin
+  - AddInManager Faceless : use for load last process before addin without UI
+
 - Allow user know whether plugin can load successfully or not.
+
 - <kbd>F5</kbd> - Load fresh plugin don't need load again.
+
 - <kbd>F1</kbd> - Go link open source report some error,bug or feature request.
+
 - <kbd>Delete</kbd> - Quick remove by use right click or use from keyboard.
+
 - <kbd>Crt + MouseWheel</kbd> - Zoom in/out by use mouse wheel in command plugin.
+
 - <kbd>Arrow Up</kbd> - Move from TreeView to search.
+
 - <kbd>Arrow Down</kbd> - Move from search to TreeView.
+
 - <kbd>Esc</kbd> - Quick Close Add-in Manager.
+
 - <kbd>Enter</kbd> - Quick Run Execute a command selected in Add-in Manager.
-## Add-In Manager
+  
+  ## Add-In Manager
 
 ![](pic/AddinManager.gif)
 
@@ -45,34 +63,38 @@ Some feature include:
 - [x] AddInManagerFaceless
 
 Execute a command easily  :
- 1. Create a class library use .NET
 
- 2. Add library nanoCAD .NET API
+1. Create a class library use .NET
 
- 3. Create a command, example:
+2. Add library nanoCAD .NET API
 
- ```cs
-    [CommandMethod("DoSomething")]
-    public void Execute()
-    {
-        // do some thing code here
-    }
- ```
- 4.Load To Add-in Manager.
-
- 5.Double click to run command.
-
- 6.Use faceless when you change code or rebuild.
+3. Create a command, example:
+   
+   ```cs
+   [CommandMethod("DoSomething")]
+   public void Execute()
+   {
+       // do some thing code here
+   }
+   ```
+   
+   4.Load To Add-in Manager.
+   
+   5.Double click to run command.
+   
+   6.Use faceless when you change code or rebuild.
 
 ### Lisp Function
+
 Execute a Lisp Function easily  :
+
 1. Create a class library use .NET
 
 2. Add library nanoCAD API
 
 3. Create a Lisp Function, example:
-
- ```cs
+   
+   ```cs
     [LispFunction("DisplayFullName")]
     public static void DisplayFullName(ResultBuffer rbArgs)
     {
@@ -101,8 +123,9 @@ Execute a Lisp Function easily  :
             MessageBox.Show("Updated");
         }
     }
- ```
-4.Load To Add-in Manager.
+   ```
+   
+   4.Load To Add-in Manager.
 
 5.Use Reload when you change code or rebuild.
 
@@ -113,9 +136,10 @@ Execute a Lisp Function easily  :
 - [x] Show/Hide result inside Dockpanel Autocad and Civil3D.
 - [x] Show Result history inside CadAddinManager.
 - [x] Clear Result.
-- [X] Show Result by color.
+- [x] Show Result by color.
 
 A sample command to execute:
+
 ```csharp
 using System.Diagnostics;
 using Teigha.Runtime;
@@ -133,6 +157,7 @@ public class DebugTraceTest
     }
 }
 ```
+
 ![](pic/DockPanelOutput.png)
 
 ## Installation
@@ -170,7 +195,7 @@ the [License](License.md) file for full details.
 
 ## Credits
 
-### From base CadAddinManager 
+### From base CadAddinManager
 
 - Credit to [Chuongmep](https://github.com/chuongmep)
 - Credit to [icons8.com](https://icons8.com) for the Cad Add-in Manager icons.
@@ -180,8 +205,23 @@ the [License](License.md) file for full details.
 
 - Credit to [GeorgGrebenyuk](https://github.com/GeorgGrebenyuk) for porting to nanoCAD
 
+## Known Issues
+
+- If XAML not showed in VS 2022 on `net6.0+` add the local `System.Runtime.dll` and `PresentationFramework.dll` libraries to csproj;
+- If you getting an error in nanoCAD 
+
+```log
+AddInManagerManual - AddInManagerManualMono.Cecil.AssemblyResolutionException: Failed to resolve assembly: 'hostdbmgd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' ...
+at CadAddinManager.Model.AssemLoader.ResolveDuplicateMethod(String originalFilePath) in CadAddinManager\Model\AssemLoader.cs:line 109 ...
+```
+
+you need copy needing reference versions of nanoCAD's .API libraries to TargetDir;
 
 ## Learning Resources
 
 - <a href="https://developer.nanocad.ru/redmine/projects/ncadsdk/boards" target="_blank">nanoCAD Developer Club (RU)</a>
 - <a href="https://developer.nanocad.com/redmine/projects/ncadsdk/boards" target="_blank">nanoCAD Developer Club (RU)</a>
+
+## TODO
+
+- Edit the projects `Installer`, `Build` to nanoCAD's specific (now building only with script `nanoCadAddinManager_Build.bat`);

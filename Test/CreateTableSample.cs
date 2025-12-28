@@ -1,6 +1,5 @@
 ﻿using System;
 using HostMgd.ApplicationServices;
-using HostMgd.ApplicationServices;
 using Teigha.DatabaseServices;
 using HostMgd.EditorInput;
 using Teigha.Runtime;

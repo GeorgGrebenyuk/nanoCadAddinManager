@@ -1,5 +1,4 @@
 using HostMgd.ApplicationServices;
-using HostMgd.ApplicationServices;
 using Teigha.DatabaseServices;
 using Teigha.Runtime;
 using Application = HostMgd.ApplicationServices.Application;

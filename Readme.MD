@@ -209,14 +209,7 @@ the [License](License.md) file for full details.
 ## Known Issues
 
 - If XAML not showed in VS 2022 on `net6.0+` add the local `System.Runtime.dll` and `PresentationFramework.dll` libraries to csproj;
-- If you getting an error in nanoCAD 
-
-```log
-AddInManagerManual - AddInManagerManualMono.Cecil.AssemblyResolutionException: Failed to resolve assembly: 'hostdbmgd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' ...
-at CadAddinManager.Model.AssemLoader.ResolveDuplicateMethod(String originalFilePath) in CadAddinManager\Model\AssemLoader.cs:line 109 ...
-```
-
-you need copy needing reference versions of nanoCAD's .API libraries to TargetDir;
+- 
 
 ## Learning Resources
 

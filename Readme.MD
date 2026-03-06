@@ -184,6 +184,7 @@ Ported to nanoCAD by [GeorgGrebenyuk](https://github.com/GeorgGrebenyuk). There 
 - adding a CustomAttribute.IsResolved checking to `AssemLoader.ResolveDuplicateMethod`, because for some unloaded assemblies (for nanoCAD) it will getting to error;
 - creation a safe-version of method `AddInManagerViewModel.ClearCommandClick()`. Original version's will create a Fatal error in nanoCAD;
 - redefinition of procedure `AddInManagerViewModel.LoadCommandClick` to prevent Fatal error, if some method from library_1 will call some method2 from library_2. You will lost possibility to update second libraries via that's CadAddinManager until reloading nanoCAD;
+- class DefaultSetting, renaming to nanoCAD (TempFolderName -> `NcadAddins`, AimInternalName -> `AimInternalNcad.ini`,  AppName -> `nanoCAD Addin Manager`, IniName -> `Nanocad.ini`;
 
 ---
 

@@ -7,16 +7,16 @@ namespace CadAddinManager.Model;
 /// </summary>
 public static class DefaultSetting
 {
-    public static string AppName = "Cad Addin Manager";
+    public static string AppName = "nanoCAD Addin Manager";
     public static string FileName = "ExternalTool";
     public static string FormatExAddin = ".addin";
     public static string FormatDisable = ".disable";
 
-    public static string IniName = "Acad.ini";
+    public static string IniName = "Nanocad.ini";
 
-    public static string TempFolderName = "AcadAddins";
+    public static string TempFolderName = "NcadAddins";
 
-    public static string AimInternalName = "AimInternalAcad.ini";
+    public static string AimInternalName = "AimInternalNcad.ini";
     public static string DirLogFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
         "AppData",
         "Local",
